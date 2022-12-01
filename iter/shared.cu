@@ -158,16 +158,16 @@ __host__ void GPUInterface::conv_forward_gpu_epilog(float *host_output, float *d
 
     cudaMemcpy(host_output, device_output, outputSize * sizeof(float), cudaMemcpyDeviceToHost);
 
-    // if(Channel == 1){
-    //     FILE *fp;
-    //     fp = fopen("ref.txt", "w");
+    if(Channel == 1){
+        FILE *fp;
+        fp = fopen("ref.txt", "w");
 
-    //     for (int i = 0; i < outputSize; i++) {
-    //         fprintf(fp, "%.2f\n", host_output[i]);
-    //         // check for error here too
-    //     }
-    //     fclose(fp);
-    // }
+        for (int i = 0; i < outputSize; i++) {
+            fprintf(fp, "%.2f\n", host_output[i]);
+            // check for error here too
+        }
+        fclose(fp);
+    }
 
     // Free device memory
     cudaFree(device_output);

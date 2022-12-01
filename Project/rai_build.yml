@@ -18,5 +18,5 @@ commands:
       # You may modify the commands below. Uncomment/Comment lines based on the milestone
       #- /bin/bash -c "./m1 1000 && gprof -Q m1 gmon.out > outfile"
       # - /bin/bash -c "./m2 1000"
-      - /bin/bash -c "./m3 100"
+      - /bin/bash -c "./m3"
       #- /bin/bash -c "./final"
